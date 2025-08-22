@@ -19,7 +19,7 @@ repositories {
 }
 
 dependencies {
-    compileOnly("com.github.alexthegoood:openBoxLib:{version}")
+    compileOnly("com.github.alexthegoood:openboxlib:{version}")
 }
 ```
 
@@ -54,26 +54,24 @@ class BlockBreakListener : Listener {
 
 ```kotlin
 // Serialize a component to a string
-val serializedString: String = text("Hello World").serialize(
-    // any ComponentSerializer
-    // default PlainTextComponentSerializer.plainText()
+val serializedComponent: String = text("Hello World").serialize(
+// You can use Serializers.{PLAIN/LEGACY/MINI/...}.serializer
 ) // return string "Hello World"
 
 // Deserialize a string to a component
-val deserializedComponent: Component = "Hello World".deserialize(
-    // any ComponentSerializer
-    // default PlainTextComponentSerializer.plainText()
+val deserializedString: Component = "Hello World".deserialize(
+// You can use Serializers.{PLAIN/LEGACY/MINI/...}.serializer
 ) // return component "Hello World"
 
 // Replace a literal string within a component
 val replacedLiteral: Component = "Hello World".replaceLiteral(
-    "World", // String only
-    "Kitty" // String or ComponentLike
+    "World",
+    "Kitty"
 ) // return component "Hello Kitty"
 
 // Replace text using a regex pattern or String
 val replacedPattern: Component = "Hello World".replacePattern(
-    "Hello", // String or Pattern
-    "Hi" // String or ComponentLike
+    "Hello",
+    "Hi"
 ) // return component "Hi World"
 ```
