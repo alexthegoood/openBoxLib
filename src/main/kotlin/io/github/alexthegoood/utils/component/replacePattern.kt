@@ -3,7 +3,7 @@
  * that can be found in the LICENSE file.
  */
 
-package net.box.openboxlib.utils.component
+package io.github.alexthegoood.utils.component
 
 import net.kyori.adventure.text.Component
 import net.kyori.adventure.text.ComponentLike

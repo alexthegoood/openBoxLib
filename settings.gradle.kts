@@ -3,6 +3,10 @@
  * that can be found in the LICENSE file.
  */
 
+plugins {
+    id("org.gradle.toolchains.foojay-resolver-convention") version "1.0.0"
+}
+
 rootProject.name = "openBoxLib"
 
 dependencyResolutionManagement {

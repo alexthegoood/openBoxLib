@@ -1,4 +1,4 @@
-package net.box.openboxlib
+package io.github.alexthegoood
 
 import org.bukkit.plugin.java.JavaPlugin
 

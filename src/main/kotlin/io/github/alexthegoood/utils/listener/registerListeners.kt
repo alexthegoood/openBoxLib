@@ -3,7 +3,7 @@
  * that can be found in the LICENSE file.
  */
 
-package net.box.openboxlib.utils.listener
+package io.github.alexthegoood.utils.listener
 
 import org.bukkit.event.Listener
 import org.bukkit.plugin.java.JavaPlugin

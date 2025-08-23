@@ -15,7 +15,7 @@ plugins {
     `maven-publish`
 }
 
-project.group = "net.box.openboxlib"
+project.group = "io.github.alexthegoood"
 project.version = "1.1.0"
 
 repositories {
@@ -37,12 +37,13 @@ kotlin {
 }
 
 tasks {
-    jar { enabled = false }
-    build { dependsOn("shadowJar") }
     withType<ShadowJar> {
         archiveBaseName = rootProject.name
         archiveClassifier = null
         minimize()
+    }
+    test {
+        useJUnitPlatform()
     }
 }
 

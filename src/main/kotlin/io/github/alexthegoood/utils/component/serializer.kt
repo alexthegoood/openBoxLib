@@ -3,7 +3,7 @@
  * that can be found in the LICENSE file.
  */
 
-package net.box.openboxlib.utils.component
+package io.github.alexthegoood.utils.component
 
 import net.kyori.adventure.text.Component
 import net.kyori.adventure.text.minimessage.MiniMessage
@@ -22,9 +22,11 @@ enum class Serializers(val serializer: ComponentSerializer<Component, *, String>
     MINI (MiniMessage.miniMessage()),
     JSON (JSONComponentSerializer.json()),
     GSON (GsonComponentSerializer.gson());
+
+    operator fun invoke() : ComponentSerializer<Component, *, String> = serializer
 }
 
-private val DEFAULT_SERIALIZER = Serializers.PLAIN.serializer
+private val DEFAULT_SERIALIZER = Serializers.PLAIN()
 
 /**
  * Serializes this [Component] into a [String] using the provided serializer.
